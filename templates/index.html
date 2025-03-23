@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狼人殺 AI 遊戲</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">狼人殺 AI 遊戲</h1>
+            <p class="lead">與 AI 一起體驗狼人殺遊戲！</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3>創建新遊戲</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="gameForm">
+                            <div class="mb-3">
+                                <label for="player_count" class="form-label">玩家數量</label>
+                                <select class="form-select" id="player_count" name="player_count">
+                                    <option value="4">4人</option>
+                                    <option value="5">5人</option>
+                                    <option value="6" selected>6人</option>
+                                    <option value="7">7人</option>
+                                    <option value="8">8人</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="werewolf_count" class="form-label">狼人數量</label>
+                                <select class="form-select" id="werewolf_count" name="werewolf_count">
+                                    <option value="1">1人</option>
+                                    <option value="2" selected>2人</option>
+                                    <option value="3">3人</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="special_roles" class="form-label">特殊角色</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="seer" id="role_seer" name="special_roles" checked>
+                                    <label class="form-check-label" for="role_seer">預言家</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="human_player" class="form-label">人類玩家設定</label>
+                                <select class="form-select" id="human_player" name="human_player">
+                                    <option value="1" selected>加入遊戲 (玩家1)</option>
+                                    <option value="0">全部使用 AI</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="api_type" class="form-label">API 類型</label>
+                                <select class="form-select" id="api_type" name="api_type">
+                                    <option value="openai" selected>OpenAI</option>
+                                    <option value="anthropic">Anthropic (Claude)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="model_name" class="form-label">模型名稱</label>
+                                <select class="form-select" id="model_name" name="model_name">
+                                    <!-- 初始選項，將通過JavaScript動態更新 -->
+                                    <option value="gpt-4o" selected>GPT-4o</option>
+                                    <option value="gpt-4o-mini">GPT-4o Mini</option>
+                                    <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                                    <option value="gpt-4">GPT-4</option>
+                                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">創建遊戲</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

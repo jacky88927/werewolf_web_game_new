@@ -1,0 +1,110 @@
+/* 基本樣式 */
+body {
+    min-height: 100vh;
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+/* 遊戲日誌樣式 */
+#game-log, #discussion-log, #player-history, #chat-log {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    font-family: monospace;
+}
+
+.log-entry {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+/* 討論和聊天訊息樣式 */
+.message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.message.self {
+    background-color: #0d6efd;
+    margin-left: auto;
+}
+
+.message.other {
+    background-color: #6c757d;
+    margin-right: auto;
+}
+
+.message-header {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 3px;
+}
+
+/* 玩家列表樣式 */
+#player-list .list-group-item {
+    background-color: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.2);
+}
+
+.player-status-alive {
+    color: #28a745;
+}
+
+.player-status-dead {
+    color: #dc3545;
+    text-decoration: line-through;
+}
+
+/* 角色樣式 */
+.role-villager {
+    color: #28a745;
+}
+
+.role-werewolf {
+    color: #dc3545;
+}
+
+.role-seer {
+    color: #0dcaf0;
+}
+
+/* 投票和夜晚行動選項 */
+#vote-options .list-group-item, 
+#night-action-options .list-group-item {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+#vote-options .list-group-item:hover, 
+#night-action-options .list-group-item:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+#vote-options .list-group-item.selected, 
+#night-action-options .list-group-item.selected {
+    background-color: #0d6efd;
+}
+
+/* 系統訊息 */
+.system-message {
+    color: #ffc107;
+    font-style: italic;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* 陰影效果 */
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
